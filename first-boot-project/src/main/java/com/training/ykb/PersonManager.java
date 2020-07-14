@@ -19,6 +19,11 @@ public class PersonManager {
                            personParam);
     }
 
+    public void updatePerson(final Person personParam) {
+        this.personMap.put(personParam.getId(),
+                           personParam);
+    }
+
     public void deletePerson(final String uid) {
         this.personMap.remove(uid);
     }

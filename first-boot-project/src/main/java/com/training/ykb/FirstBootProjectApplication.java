@@ -21,6 +21,19 @@ public class FirstBootProjectApplication {
         FirstBootProjectApplication beanLoc = runLoc.getBean(FirstBootProjectApplication.class);
         beanLoc.mb.setName("osman");
 
+        YkbErrorMessage errorMessageLoc = new YkbErrorMessage();
+        errorMessageLoc.setSubSystem("IT");
+        errorMessageLoc.setBoundedContext("CRM");
+        errorMessageLoc.setMicroservice("CUSTOMER");
+        errorMessageLoc.setDesc("Error oldu");
+        errorMessageLoc.setError(1000);
+
+        YkbErrorMessage errorMessageLoc2 = new YkbErrorMessage("IT",
+                                                               "CRM",
+                                                               "CUSTOMER",
+                                                               "Error oldu",
+                                                               1000);
+
     }
 
 }
