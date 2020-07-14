@@ -4,16 +4,21 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Null;
+import javax.validation.constraints.Size;
+
+import com.training.ykb.validation.MyValidation;
 
 public class Person {
 
     @Null
     private String id;
     @NotEmpty(message = "Name boş olamaz.")
+    @Size(min = 2, max = 40, message = "name 2 ile 40 arasında olmalı.")
     private String name;
     @NotEmpty
     // @NotNull
     // @NotBlank
+    @MyValidation(start = "yay", message = "soyisim yay ile başlamalı")
     private String surname;
     @Min(value = 10, message = "Yaş Minimum 10 olabilir.")
     @Max(120)
