@@ -34,6 +34,11 @@ public class FirstBootProjectApplication {
                                                                "Error oldu",
                                                                1000);
 
+        YkbErrorMessage errorMessageLoc3 = new YkbErrorMessage().subSystem("IT")
+                                                                .boundedContext("CRM")
+                                                                .microservice("CUSTOMER")
+                                                                .errorDesc("Error Oldu")
+                                                                .errorIndex(1000);
     }
 
 }
