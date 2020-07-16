@@ -1,14 +1,13 @@
 package com.training.ykb.order.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import com.netflix.loadbalancer.BestAvailableRule;
 import com.netflix.loadbalancer.IPing;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.NoOpPing;
 
-@Configuration
+// @Configuration
 public class AccountingRibbonClientConfig {
 
     @Bean

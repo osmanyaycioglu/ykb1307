@@ -18,6 +18,7 @@ import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
 import com.training.ykb.account.models.PaymentRequest;
 import com.training.ykb.account.models.PaymentResponse;
+import com.training.ykb.order.clients.IAccountClient;
 import com.training.ykb.order.models.Order;
 
 @RestController
@@ -37,8 +38,27 @@ public class OrderController {
     @Autowired
     private EurekaClient        ec;
 
+    @Autowired
+    private IAccountClient      ac;
+
     @PostMapping("/submit")
     public String submit(@RequestBody final Order orderParam) {
+        if (OrderController.logger.isInfoEnabled()) {
+            OrderController.logger.info("[OrderController][submit]-> " + orderParam);
+        }
+        PaymentRequest paymentRequestLoc = new PaymentRequest();
+        paymentRequestLoc.setAmount(100);
+        paymentRequestLoc.setOrderId((long) new Random().nextInt(100_000));
+        PaymentResponse postForObjectLoc = this.ac.xyz(paymentRequestLoc);
+        if (OrderController.logger.isInfoEnabled()) {
+            OrderController.logger.info("[OrderController][submit]-> Pay Request Response : " + postForObjectLoc);
+        }
+
+        return "OK : " + postForObjectLoc;
+    }
+
+    @PostMapping("/submit2")
+    public String submit2(@RequestBody final Order orderParam) {
         if (OrderController.logger.isInfoEnabled()) {
             OrderController.logger.info("[OrderController][submit]-> " + orderParam);
         }
@@ -55,8 +75,8 @@ public class OrderController {
         return "OK : " + postForObjectLoc;
     }
 
-    @PostMapping("/submit2")
-    public String submit2(@RequestBody final Order orderParam) {
+    @PostMapping("/submit3")
+    public String submit3(@RequestBody final Order orderParam) {
         if (OrderController.logger.isInfoEnabled()) {
             OrderController.logger.info("[OrderController][submit]-> " + orderParam);
         }

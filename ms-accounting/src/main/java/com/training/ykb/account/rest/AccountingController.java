@@ -2,6 +2,7 @@ package com.training.ykb.account.rest;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class AccountingController {
     private int port;
 
     @PostMapping("/pay")
-    public PaymentResponse pay(final PaymentRequest pr) {
+    public PaymentResponse pay(@RequestBody final PaymentRequest pr) {
         System.out.println(pr);
         PaymentResponse paymentResponseLoc = new PaymentResponse();
         paymentResponseLoc.setOrderId(pr.getOrderId());
