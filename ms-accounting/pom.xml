@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.training.ykb</groupId>
-	<artifactId>ms-order</artifactId>
+	<artifactId>ms-accounting</artifactId>
 	<version>1.0.0</version>
-	<name>ms-order</name>
+	<name>ms-accounting</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -47,10 +47,6 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
 		</dependency>
 	</dependencies>
 
