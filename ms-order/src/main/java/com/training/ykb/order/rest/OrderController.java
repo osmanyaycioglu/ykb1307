@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,9 @@ public class OrderController {
     @Qualifier("direct")
     private RestTemplate        rtd;
 
+    @Value("${server.port}")
+    private int                 port;
+
     @Autowired
     private EurekaClient        ec;
 
@@ -54,7 +58,7 @@ public class OrderController {
             OrderController.logger.info("[OrderController][submit]-> Pay Request Response : " + postForObjectLoc);
         }
 
-        return "OK : " + postForObjectLoc;
+        return this.port + " OK : " + postForObjectLoc;
     }
 
     @PostMapping("/submit2")
