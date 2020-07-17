@@ -1,0 +1,19 @@
+{
+	"type": "HystrixThreadPool",
+	"name": "OrderController",
+	"currentTime": 1594992526996,
+	"currentActiveCount": 0,
+	"currentCompletedTaskCount": 10,
+	"currentCorePoolSize": 10,
+	"currentLargestPoolSize": 10,
+	"currentMaximumPoolSize": 10,
+	"currentPoolSize": 10,
+	"currentQueueSize": 0,
+	"currentTaskCount": 10,
+	"rollingCountThreadsExecuted": 0,
+	"rollingMaxActiveThreads": 0,
+	"rollingCountCommandRejections": 0,
+	"propertyValue_queueSizeRejectionThreshold": 5,
+	"propertyValue_metricsRollingStatisticalWindowInMilliseconds": 10000,
+	"reportingHosts": 1
+}
